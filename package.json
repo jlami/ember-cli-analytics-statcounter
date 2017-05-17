@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-analytics-statcounter",
-  "version": "0.0.1-beta.1",
+  "version": "0.0.1-beta.2",
   "description": "Statcounter integration for ember-cli-analytics.",
   "keywords": [
     "ember-addon",
