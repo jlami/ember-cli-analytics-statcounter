@@ -1,9 +1,10 @@
 {
   "name": "ember-cli-analytics-statcounter",
-  "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "version": "0.0.1-beta.1",
+  "description": "Statcounter integration for ember-cli-analytics.",
   "keywords": [
-    "ember-addon"
+    "ember-addon",
+    "ember-cli-analytics"
   ],
   "license": "MIT",
   "author": "",

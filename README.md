@@ -1,26 +1,33 @@
 # ember-cli-analytics-statcounter
 
-This README outlines the details of collaborating on this Ember addon.
+This is a simple Statcounter integration for [ember-cli-analytics](https://github.com/tomasbasham/ember-cli-analytics/)
 
 ## Installation
 
-* `git clone <repository-url>` this repository
-* `cd ember-cli-analytics-statcounter`
-* `npm install`
+* `ember install ember-cli-analytics`
+* add this project to your package.json
 
-## Running
+## Configuration
 
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
+```
+// config/environment.js
+module.exports = function(environment) {
+  var ENV = {
+    analytics: {
+      integrations: [
+        {
+          name: 'Statcounter',
+          config: {
+             sc_project: ####,
+             sc_security: 'secret',
+             sc_invisible: 1,
+             //more sc_variables
+          }
+        },
+      ]
+    },
+  };
 
-## Running Tests
-
-* `npm test` (Runs `ember try:each` to test your addon against multiple Ember versions)
-* `ember test`
-* `ember test --server`
-
-## Building
-
-* `ember build`
-
-For more information on using ember-cli, visit [https://ember-cli.com/](https://ember-cli.com/).
+  return ENV;
+};
+```
