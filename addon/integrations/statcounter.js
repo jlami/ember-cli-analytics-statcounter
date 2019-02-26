@@ -12,10 +12,11 @@ export default Base.extend({
 			window.location.origin = window.location.protocol + "//" + window.location.hostname + (window.location.port ? ':' + window.location.port: '');
 		}
 		let viewURI = window.location.origin + options.page;
-			
+		viewURI = escape(viewURI.substring(0, 600));
+		
 		if (window.sc_clickstat_call) {
 			//let _29 = ....
-			let page_info = "&resolution=" + sc_width + "&h=" + sc_height + "&camefrom=" + escape(window.sc_url.substring(0, 600)) + "&u=" + escape(viewURI.substring(0, 600)) + "&t=" + sc_title + "&sc_snum=" + sc_script_num + sc_pageview_tag_string + "&sess=7a9eb4&p=0&invisible=1";
+			let page_info = "&resolution=" + sc_width + "&h=" + sc_height + "&camefrom=" + window.sc_url + "&u=" + viewURI + "&t=" + sc_title + "&sc_snum=" + sc_script_num + sc_pageview_tag_string + "&sess=7a9eb4&p=0&invisible=1";
 			let uri = sc_base_dir + "&sc_random=" + Math.random() + sc_unique_returning + page_info;
 			
 			let i = new Image();
@@ -31,7 +32,6 @@ export default Base.extend({
 	
 	insertTag: Ember.on('init', function() {
 		const config = Ember.copy(Ember.get(this, 'config'));
-		
 		if (canUseDOM) {
 			for (let i in config) {
 				window[i] = config[i];
